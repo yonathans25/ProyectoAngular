@@ -1,0 +1,12 @@
+<h2>componente parques</h2>
+<ol>
+    <li>nombre: {{nombre}}</li>
+    <li>metros: {{metros}}</li>
+    <li>vegetacion: {{vegetacion}}</li>
+    <li>
+        <span *ngIf =" abierto == true">abierto</span>
+        <span *ngIf =" abierto == false">cerrado</span>
+    </li>
+</ol>
+
+<button (click)= "emitirEvento()">Mostrar en el padre</button> 

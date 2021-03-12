@@ -1,17 +1,22 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'mostrarEmail',
+  templateUrl: `
+  <h2>{{title}}</h2>
+  <li class="hidden">
+          <span *ngIf ="emailContacto">Email contacto: {{emailContacto}}
+            <button (click) = "borrarEmail()">Eliminar email de contacto</button>
+          </span>
+        </li>
+  `
 })
-export class AppComponent implements OnInit, DoCheck{
+export class MostrarEmailComponent implements OnInit, DoCheck{
   title = 'NGZOO';
   emailContacto;
 
   ngOnInit(){
     this.emailContacto =localStorage.getItem("contactoEmail");
-   // console.log(localStorage.getItem("emailContacto"));
   }
   
   ngDoCheck(){
@@ -25,4 +30,3 @@ export class AppComponent implements OnInit, DoCheck{
   }
 
 }
-

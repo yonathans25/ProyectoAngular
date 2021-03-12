@@ -1,0 +1,14 @@
+<h1>componente tienda</h1>
+
+ nombre del parque:
+ <input type="text" [(ngModel)]="nombreDelParque" (keyup) ="mostrarNombre"/>   
+
+ resultado:
+ {{nombreDelParque}}
+<hr>
+
+<p *ngIf = "nombreDelParque">
+    <parques [nombre] = "nombreDelParque" 
+    (pasameLosDatos) = "verDatosParque($event)"></parques>
+
+</p>
